@@ -1,0 +1,54 @@
+---
+title: "Final Project Report"
+author: "Jerry Albert Mathew"
+date: "2026-03-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Topic: Economic Policy Uncertainty and Asset Decoupling
+
+Student: Jerry Albert Mathew, Course: Data Mining and LLMs (Spring 2026), Lecturer: Dr. Andrea De Angelis
+
+## Project Goal
+
+The primary objective of this project is to investigate the relationship between economic policy uncertainty and asset decoupling. We aim to analyze how fluctuations in economic policy uncertainty impact the correlation between Gold and Nas100. By utilizing data mining techniques and large language models (LLMs), we will explore patterns and trends in financial markets to understand the extent to which economic policy uncertainty contributes to asset decoupling.
+
+## Research Question
+
+To what extent does high Economic Policy Uncertainty (EPU) drive a "decoupling" between the Nasdaq 100 and Gold and what specific institutional events drive these shifts?
+
+## Data access pipeline and Methodology
+
+1.Quantitative Analysis:Historical data on Gold prices, and Nasdaq 100 index values was retrieved using the tidyquant package which demonstrartes automated data retrieval.
+
+2.Economic Policy Uncertainty Index: The EPU index was sourced from the FRED Api, which provides a comprehensive measure of economic policy uncertainty based on newspaper coverage. This was integrated with the financial data to analyze correlations and trends.
+
+3.LLM Analysis: Gemini 3 Flash API was accessed to retrieve historical institutional contexts for top 3 crash dates.
+
+## Step by Step Methodology
+
+1)Api Access: We utilized the tidyquant package to access historical price data for Gold and the Nasdaq 100 index. The FRED API was used to retrieve the Economic Policy Uncertainty (EPU) index data.
+
+2)Gitignore was used so that the personal Api keys wont get shared with other collaborators while sharing the work in github.
+
+3)Packages like tidyverse,tidyquant and fredr are loaded.
+
+4)EPU, gold and nas100 data is pulled and refined in such a way that data from 2020-01-01 is captured and is merged to a new folder named "data/final_df".
+
+5)The data obtained from "final_df" is being mutated so that all the values are in the numeric format whirmat which is easier for further analysis.As comparing 200 point EPU to NAS100 and Gold is not a good approach for comparison, Log returns are used. Roll package is loaded for getting the 30 day rolling correlation. To obtain a plot showing the relationship between rolling correlation and EPU index, ggplot is used. The plot is saved as "plot/friction_correlation_plot" and the analysis result is saved as "data/analysis_results.csv".
+
+6)The lowest correlation is then identified to find the top dates which have the highest decoupling rates and is then saved as "data/crash_dates.csv".
+
+7)Gemini AI API is used and a custom R function is created get_gemini_context(), to automate the historical context for each specific crash dates.
+
+8)The API is prompted to act as an historian to identify major US political or institutional events that contributed to economic policy uncertainity on each target date and to explain the theoretical reasons for the observed Gold and Nasdaq 100 decoupling.
+
+9)Following the principles of reproducible workflows, a tryCatch() block was included in the script to ensure that individual API status errors would not stop the entire data-processing loop. During this phase, a hurdle was encountered where specific model versions returned 404 Not Found errors and it was resolved by transitioning to the gemini-flash-latest endpoint. The execution is done with 1 second delay to avoid rate limits.
+
+10)The AI generated summaries are merged with the original table and is saved as "data/llm successful_explanation.csv"
+
+11)
