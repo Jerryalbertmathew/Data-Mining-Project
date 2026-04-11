@@ -51,4 +51,38 @@ To what extent does high Economic Policy Uncertainty (EPU) drive a "decoupling" 
 
 10)The AI generated summaries are merged with the original table and is saved as "data/llm successful_explanation.csv"
 
-11)
+11)The Final part of the project is to combine the market data with the LLM's qualitative analysis and this is done using the function "left_join".
+
+12)Automated categorization of market behaviour is made and two categories which shows the safe heaven decoupling and liquidity crisis is categorized. This is saved as "data/final_synthesis_report"
+
+13)Decoupling dashboard is made as a plot using ggplot and ggrepel function. The LLM generated text is also being shown there.The plot is saved as "plot/Rplot".
+
+## Critical reflection on limitations and validity
+
+LLM's are used as a supervisor for the project.
+
+I encountered "http 404" errors when using the Gemini API for the LLM explanation. Even after trying to solve using LLM it wasnt working properly and in my further research I solved the problem by not showing the specific gemini model, instead the latest model was used and this solved the problem.
+
+## GitHub Process and Documentation
+
+The project shows an iterative development model which shows the whole process step by step-
+
+The github repository is divided into folders -
+
+1)"/data" which shows all the data sets being produced and is saved as csv files.
+
+2)"/plot" which shows the two plots being made in the project.
+
+3)"/scripts" which shows all the scripts being written and saved in that order
+
+4)".gitignore" is there to have a privacy over the API keys
+
+5)"Data_Mining_Project.Rproj" is a trial R project which I used as a test for using github repository.
+
+6)"README.md" is the readme file and is being uploaded into the repository.
+
+7)"Project report.Rmd" is this file and is the final folder in the repository.
+
+## LLM Disclosure
+
+Gemini 3 Flash is used via API for the LLM generated texts. ChatGPT and Gemini are also being used for writing and debugging the codes. The code for getting the historical and political contexts using Gemini API was fully constructed using LLM. Most of the other codes were written by myself eventhough it was perfected using LLM's.
