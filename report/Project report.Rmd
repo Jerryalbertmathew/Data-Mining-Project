@@ -57,11 +57,45 @@ To what extent does high Economic Policy Uncertainty (EPU) drive a "decoupling" 
 
 13)Decoupling dashboard is made as a plot using ggplot and ggrepel function. The LLM generated text is also being shown there.The plot is saved as "plot/Rplot".
 
+## Results and Analysis of Crash Dates and LLM Explanation
+
+This section provides the qualitative reason(LLM explanation) behind the quantitative analysis(Top crash dates) by using the Gemini API. Historical and political context for the three most significant decoupling events were obtained using the Gemini API. These summaries treat the dates as historical milestones of institutional and political uncertainity.
+
+a)27th May 2025- "Memorial Day Meltdown"\\
+
+Quantitative Analysis- Nas100 displayed paradoxical resilience before a late-session divergence, while Gold surged by 3.2%, breaking the \$2,800/oz barrier.
+
+Institutional drivers- The LLM analysis identifies three different institutional events converged together(Triple threat) to create a policy opacity.The Failure of the Debt Alignment Act,The Fed Independence Challenge and Silicon Sovereignty(executive order) are the three events that led to the shock.
+
+Decoupling Analysis-This date represents a "Point of No Return" for mid-decade fiscal policy. The EPU Index spiked as the market moved from a "soft landing" narrative to a fear of fiscal dominance, where the central bank is perceived to subordinate inflation targets to fund government deficits.
+
+Insight-Gold transitioned from a mere inflation hedge to a sovereign credit hedge Investors fled to Gold not due to consumer prices, but due to "Institutional Decay." Conversely, the Nasdaq 100 was briefly treated as a "private-sector safe haven," with investors reasoning that Big Tech balance sheets were more reliable than G20 central bank reserves.
+
+b)28th May 2025 -"May Pivot of Uncertanity"
+
+Quantitative Analysis- Gold rise a violent 3.2% to record high whereas the Nas100 went to a negative 4.1%
+
+Institutional drivers- Two primary catalysts emerged: a stark U.S. Treasury warning regarding the exhaustion of "Extraordinary Measures" (the debt ceiling "X-Date") and the implementation of restrictions on the Level 5 Autonomous Systems.
+
+Decoupling Analysis-This event is categorized as a "Flight from Systemic Risk into tangible Value".The market correctly anticipated Financial Repression,a policy of keeping interest rates lower than the inflation to melt away national debt.
+
+Insight-The Nasdaq 100 suffered because it is considered as a "Hyper-Institutional" asset, which relies on global trade stability and predictable intellectual property laws. When the U.S. Treasury,the pillar of global finance shook, the "Digital Sovereignty" restrictions erased global revenue streams from forward-looking models, causing massive valuation compression.
+
+c)29th May 2025-"Debt servicing Impasse"
+
+Quantitative Analysis- Gold and Nas100 both had a rare simultaneous rise with gold having a 3.2% rise and Nas100 with a 2.1% rise and this defines the standard inverse relationship
+
+Institutional drivers-The primary driver was the collapse of the Bipartisan Budget Act of 2025 and rumors of a Federal Reserve "Stealth Pivot"toward Yield Curve Control to manage interest payments on sovereign debt.
+
+Decoupling Analysis-This date marks the beginning of the "Great Divergence." The standard "risk on/risk off" script failed because both assets benefited from an expected expansion of the Federal Reserve’s balance sheet (liquidity injection).
+
+Insight-Gold acted as a "Sovereign Credit Default Swap" against the failure of the U.S. Treasury. Simultaneously, the Nasdaq was viewed as a productivity lifeboat. Investors reasoned that even if the government faced fiscal instability, private sector AI innovation remained insulated. This formed a new market alliance: the anti fragile barbell,where investors held assets the government could not print (Gold) and entities that could outrun mismanagement through innovation (Nas100)
+
 ## Critical reflection on limitations and validity
 
-LLM's are used as a supervisor for the project.
+LLM's are used as a supervisor for the project. I encountered "http 404" errors when using the Gemini API for the LLM explanation. Even after trying to solve using LLM it wasnt working properly and in my further research I solved the problem by not showing the specific gemini model, instead the latest model was used and this solved the problem.
 
-I encountered "http 404" errors when using the Gemini API for the LLM explanation. Even after trying to solve using LLM it wasnt working properly and in my further research I solved the problem by not showing the specific gemini model, instead the latest model was used and this solved the problem.
+The final analysis is not very usefull with the current research results.I think more analysis on the explanation given by the LLM should be done. The analysis should be made more broad with having a higher decoupling dates for analysis.The LLM explanation should also be constructed into some scale for a better comparitive analysis.
 
 ## GitHub Process and Documentation
 
