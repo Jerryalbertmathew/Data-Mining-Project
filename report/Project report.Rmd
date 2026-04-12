@@ -57,6 +57,24 @@ To what extent does high Economic Policy Uncertainty (EPU) drive a "decoupling" 
 
 13)Decoupling dashboard is made as a plot using ggplot and ggrepel function. The LLM generated text is also being shown there.The plot is saved as "plot/Rplot".
 
+## The Friction Correlation Plot: Quantitative Proof of Decoupling
+
+A Friction Correlation Plot is created first so that it can be used for further analysis using the LLM's and it acts as the backbone for further study. This visualization serves as the empirical backbone of the project, demonstrating the mathematical shift in the relationship between Gold and the Nasdaq 100 during periods of high Economic Policy Uncertainty (EPU).
+
+Visualization and design-The plot was constructed using ggplot2 and utilized a dual-axis approach to overlay two distinct datasets:
+
+a)30 day rolling correlation-Represented as a trend line, which tracks the shifting relationship between Gold and Nas100. A value approaching +1.0 indicates a "coupled" market, while a drop toward -1.0 identifies the "friction" or decoupling as mentioned in the research question.
+
+b)EPU index shocks-The background of the plot features shaded regions or bar overlays representing the EPU Index spikes which is sourced from the FRED API. This allows for an immediate visual correlation between policy panic and asset friction.
+
+Interpretation of the term "friction"-In my analysis, the "Friction" identifies the exact moments where institutional trust began to erode. For instance it can be summed into two zones-
+
+a)High correlation zones-During periods of low EPU, the plot shows Gold and the Nasdaq moving together, likely driven by broad market liquidity.
+
+b)Negative correlation zones-The "lowest correlation" points on the plot is aligned perfectly with the Crash Dates which I sent to the Gemini API. This statistical friction confirms that investors were actively fleeing the Institutional Nas100 for the Anti Institutional Gold.
+
+Significance of the methodological approach-As required by the course, a reproducible data access pipeline is used to create this plot and therefore the documentation of the code used to generate this plot is useful for further ananlysis,regenaration of such plots and even validation of my study can be made. The plot acts as a validity check. Further analysis can be done on different dates and if the results seems to be very different then maybe I should recheck my analysis approach.
+
 ## Results and Analysis of Crash Dates and LLM Explanation
 
 This section provides the qualitative reason(LLM explanation) behind the quantitative analysis(Top crash dates) by using the Gemini API. Historical and political context for the three most significant decoupling events were obtained using the Gemini API. These summaries treat the dates as historical milestones of institutional and political uncertainity.
@@ -93,9 +111,13 @@ Insight-Gold acted as a "Sovereign Credit Default Swap" against the failure of t
 
 ## Critical reflection on limitations and validity
 
-LLM's are used as a supervisor for the project. I encountered "http 404" errors when using the Gemini API for the LLM explanation. Even after trying to solve using LLM it wasnt working properly and in my further research I solved the problem by not showing the specific gemini model, instead the latest model was used and this solved the problem.
+Technical resilience and API fragility-The most significant technical hurdle was the "HTTP 404 Not Found" errorencountered during the LLM data pulls.I encountered "http 404" errors when using the Gemini API for the LLM explanation. Even after trying to solve using LLM it wasn't working properly and in my further research I solved the problem by not showing the specific gemini model, instead the latest model was used and this solved the problem.This decision is documented in the GitHub issues and it reflects the reality that computational social science tools are in constant flux and requires active maintenance.
 
-The final analysis is not very usefull with the current research results.I think more analysis on the explanation given by the LLM should be done. The analysis should be made more broad with having a higher decoupling dates for analysis.The LLM explanation should also be constructed into some scale for a better comparitive analysis.
+Validation of LLM generated explanation-There was a concern over the problem of a potential Hallucination as the model generated narratives from a future historian perspective. Whether the institutional shocks were logically consistent with the Economic Policy Uncertainty Index rise observed in the quantitative data was evaluated critically.The validation was made with the alignment between Friction correlation plot and LLM summaries.
+
+Use of EPU index as a proxy for uncertainty also has its limits.As it is based on news reports it can have media bias and may lag the real world market.The lowest correlation identifies decoupling, but that doesnot strictly prove causation.
+
+The final analysis is not very usefull with the current research results.I think more analysis on the explanation given by the LLM should be done. The analysis should be made more broad with having a higher decoupling dates for analysis.The LLM explanation should also be constructed into some metric scale and then further comparitive analysis can be made on large data sets easily.
 
 ## GitHub Process and Documentation
 
@@ -119,4 +141,14 @@ The github repository is divided into folders -
 
 ## LLM Disclosure
 
-Gemini 3 Flash is used via API for the LLM generated texts. ChatGPT and Gemini are also being used for writing and debugging the codes. The code for getting the historical and political contexts using Gemini API was fully constructed using LLM. Most of the other codes were written by myself eventhough it was perfected using LLM's.
+Gemini 3 Flash is used via API for the LLM generated texts. ChatGPT and Gemini are also being used for writing and debugging the codes. The code for getting the historical and political contexts using Gemini API was fully constructed using LLM. Most of the other codes were written by myself eventhough it was perfected using LLM's. When I Have ideas in my mind, I share those with the AI so that it can help me to place that in the correct position and make my project plan move in the preffered direction
+
+The prompts used are-
+
+a)Role play prompting-"Act as a financial historian.Identify the major US political or institutional events on[Target_date] that caused economic policy uncertainty.Explain why Gold and Nasdaq 100 might have decoupled on this day"
+
+b)Debugging prompting-"I am receiving an http 404 error with this r code.What is the reason behind this and how to fix the problem?"
+
+c)Correcting mistakes in the code-"This code is not running. Please find the part which creates this problem and give me back the correct code"
+
+d)Joining ideas together and helping to create a structure- When i Have ideas in my mind, I share those with the AI so that it can help me to place that in the correct position.
